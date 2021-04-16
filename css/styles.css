@@ -1,0 +1,167 @@
+:root {
+    --theme-00: #CCCCCC;
+    --theme-01: #1A1A1A;
+    --theme-02: #B3B3B3;
+    --theme-03: #E6E6E6;
+
+    --header-space: 300px;
+    --body-width: 600px;
+    --padding: 12px;
+}
+
+html, body {
+    background-color: var(--theme-00);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--theme-01);
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content > * {
+    position: absolute;
+}
+
+.header {
+    width: 100%;
+    height: var(--header-space);
+}
+
+.logo {
+    height: calc(var(--header-space) * .85);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.body-scroller {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.body {
+    width: 100%;
+    margin: var(--header-space) 0 calc(var(--padding) * 6) 0;
+    display: flex;
+    justify-content: center;
+}
+
+.body-inner {
+    width: var(--body-width);
+    background-color: var(--theme-03);
+    border-style: solid;
+    border-radius: 44px;
+    min-height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#body-header {
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+}
+
+#body-header > div {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: var(--padding);
+    cursor: pointer;
+    color: var(--theme-02);
+    transition: all .2s ease-in-out;
+    border-color: rgba(0,0,0,0) !important;
+    border-bottom: 2px;
+    border-style: solid;
+}
+
+#body-header > div:hover, #body-header > div.selected {
+    color: var(--theme-01);
+}
+
+#body-header > div.selected {
+    border-color: #1A1A1A !important;
+}
+
+#body-content {
+    overflow: hidden;
+}
+
+#body-slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    transition: left .3s ease-in-out;
+}
+
+#body-slider > div {
+    padding: calc(var(--padding) * 2);
+    padding-bottom: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: calc(100% - var(--padding) * 4);
+    justify-content: space-between;
+}
+
+.app-card {
+    width: calc(50% - var(--padding));
+    background-color: white;
+    border-radius: 24px;
+    transition: all .1s ease-in-out;
+    margin-bottom: calc(var(--padding) * 2);
+}
+
+.app-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.app-card-top {
+    height: 200px;
+    background-color: var(--theme-00);
+    border-radius: 24px 24px 0 0;
+}
+
+.app-card-bottom {
+    padding: calc(var(--padding) * 2);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    min-width: calc(100% - var(--padding) * 4);
+}
+
+.contact-card {
+    width: calc(100% - var(--padding));
+    background-color: white;
+    border-radius: 24px;
+    transition: all .1s ease-in-out;
+    margin-bottom: calc(var(--padding) * 2);
+    padding: var(--padding);
+    display: flex;
+}
+
+.logo-text {
+    width: 400px;
+    left: calc((50% - var(--body-width) / 2) - 300px);
+    transform: rotate(90deg);
+    top: calc(50% - 50px);
+}
+
+i {
+    width: 32px;
+    height: 32px;
+}
